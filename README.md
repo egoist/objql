@@ -50,6 +50,54 @@ objql(data, schema)
 */
 ```
 
+### Custom Type
+
+```js
+const data = {
+  email: 'kevin'
+}
+
+const schema = {
+  email: 'Email'
+}
+
+const types = {
+  Email(v) {
+    return v.includes('@') ? v : `${v}@gmail.com`
+  }
+}
+
+objql(data, schema, { types })
+/* =>
+{
+  email: 'kevin@gmail.com'
+}
+*/
+```
+
+### Pass a String as Schema
+
+```js
+const data = {
+  age: '18'
+}
+
+const schema = JSON.stringify({
+  age: 'number'
+})
+
+const types = {
+  number: Number
+}
+
+objql(data, schema, { types })
+/* =>
+{
+  age: 18
+}
+*/
+```
+
 ## Contributing
 
 1. Fork it!
