@@ -13,10 +13,7 @@ const config: Config = {
   plugins: {
     typescript2: {
       tsconfigOverride: {
-        include: ['src'],
-        compilerOptions: {
-          declaration: true
-        }
+        include: ['src']
       }
     }
   }
