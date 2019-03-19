@@ -3,13 +3,14 @@
   "version": "0.0.0",
   "description": "A query utility for JavaScript.",
   "main": "dist/objql.cjs.js",
+  "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
   "scripts": {
     "test": "jest",
     "test:cov": "jest --coverage",
-    "build": "bili src/index.ts --minimal --file-name objql.[format].js --format esm --format cjs --format umd --module-name objql",
+    "build": "bili",
     "prepublishOnly": "npm run build"
   },
   "repository": {
