@@ -1,0 +1,58 @@
+{
+  "name": "objql",
+  "version": "0.0.0",
+  "description": "A query utility for JavaScript.",
+  "main": "dist/objql.cjs.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "test": "jest",
+    "test:cov": "jest --coverage",
+    "build": "bili src/index.ts --minimal --file-name objql.[format].js --format esm --format cjs --format umd --module-name objql",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "url": "egoist/objql",
+    "type": "git"
+  },
+  "author": "egoist<0x142857@gmail.com>",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/jest": "^24.0.11",
+    "bili": "^4.5.2",
+    "commitizen": "^3.0.7",
+    "cz-conventional-changelog": "^2.1.0",
+    "husky": "^1.0.0-rc.13",
+    "jest": "^24.5.0",
+    "lint-staged": "^7.2.0",
+    "prettier": "^1.15.2",
+    "rollup-plugin-typescript2": "^0.20.1",
+    "semantic-release": "^15.13.3",
+    "ts-jest": "^24.0.0",
+    "typescript": "^3.3.3333"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,js,json,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "release": {
+    "branch": "master"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
