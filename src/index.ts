@@ -19,10 +19,9 @@ function objql(data: any, schema: any, { types }: Options = {}): any {
   }
 
   if (Array.isArray(data)) {
-    if (!Array.isArray(schema)) {
-      throw new TypeError(`schema must be an array`)
-    }
-    return data.map(item => objql(item, schema[0]))
+    return data.map((item) =>
+      objql(item, Array.isArray(schema) ? schema[0] : schema)
+    )
   }
 
   if (typeof data === 'object') {

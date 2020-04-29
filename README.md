@@ -21,9 +21,9 @@ const data = {
   baz: {
     foo: new Date(),
     bar: [1, 2, 3],
-    baz: 'hello'
+    baz: 'hello',
   },
-  wasted: 'blah blah..'
+  wasted: 'blah blah..',
 }
 
 const schema = {
@@ -31,9 +31,9 @@ const schema = {
   bar: Number, // Select `bar` from `data` and coerce to `Number(data.foo)`
   baz: {
     foo: true,
-    bar: [String],
-    baz: v => `${v} world`
-  }
+    bar: String,
+    baz: (v) => `${v} world`,
+  },
 }
 
 objql(data, schema)
@@ -54,17 +54,17 @@ objql(data, schema)
 
 ```js
 const data = {
-  email: 'kevin'
+  email: 'kevin',
 }
 
 const schema = {
-  email: 'Email'
+  email: 'Email',
 }
 
 const types = {
   Email(v) {
     return v.includes('@') ? v : `${v}@gmail.com`
-  }
+  },
 }
 
 objql(data, schema, { types })
@@ -79,15 +79,15 @@ objql(data, schema, { types })
 
 ```js
 const data = {
-  age: '18'
+  age: '18',
 }
 
 const schema = JSON.stringify({
-  age: 'number'
+  age: 'number',
 })
 
 const types = {
-  number: Number
+  number: Number,
 }
 
 objql(data, schema, { types })

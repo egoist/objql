@@ -21,18 +21,18 @@
   "license": "MIT",
   "dependencies": {},
   "devDependencies": {
-    "@types/jest": "^24.0.11",
-    "bili": "^4.5.2",
-    "commitizen": "^3.0.7",
+    "@types/jest": "^25.2.1",
+    "bili": "^4.9.3",
+    "commitizen": "^4.0.4",
     "cz-conventional-changelog": "^2.1.0",
-    "husky": "^1.0.0-rc.13",
-    "jest": "^24.5.0",
-    "lint-staged": "^7.2.0",
-    "prettier": "^1.15.2",
-    "rollup-plugin-typescript2": "^0.20.1",
-    "semantic-release": "^15.13.3",
-    "ts-jest": "^24.0.0",
-    "typescript": "^3.3.3333"
+    "husky": "^4.2.5",
+    "jest": "^25.5.0",
+    "lint-staged": "^10.2.0",
+    "prettier": "^2.0.5",
+    "rollup-plugin-typescript2": "^0.27.0",
+    "semantic-release": "^17.0.7",
+    "ts-jest": "^25.4.0",
+    "typescript": "^3.8.3"
   },
   "jest": {
     "testEnvironment": "node"
